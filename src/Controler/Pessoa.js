@@ -6,12 +6,46 @@ export async function createTable(){
     })
 }
 
+export async function createFavoritasTable(){
+    const db = await openDb();
+
+    await db.exec(`
+    
+        CREATE TABLE IF NOT EXISTS Favoritas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            userID INTEGER,
+            pessoa1 INTEGER,
+            pessoa2 INTEGER,
+            pessoa3 INTEGER,
+            pessoa4 INTEGER,
+            pessoa5 INTEGER,
+            pessoa6 INTEGER
+        );
+    `);
+}
+
+
+
+
+
 export async function selectPessoas(req, res){
-    openDb().then(db=>{
-        db.all('SELECT * FROM Pessoa')
-        .then(pessoas=>  res.json(pessoas))
+    const nome = req.query.nome;
+
+    openDb().then(db => {
+
+        if(nome){
+            db.all(
+                'SELECT * FROM Pessoa WHERE nome LIKE ?',
+                [`%${nome}%`]
+            ).then(pessoas => res.json(pessoas));
+        } else {
+            db.all('SELECT * FROM Pessoa')
+              .then(pessoas => res.json(pessoas));
+        }
+
     });
 }
+
 
 export async function selectPessoa(req, res){
     let id = req.body.id;
@@ -31,23 +65,21 @@ export async function insertPessoa(req, res){
     })
 }
 
-export async function updatePessoa(req, res){
-    let pessoa = req.body;
-    openDb().then(db=>{
-        db.run('UPDATE Pessoa SET nome=?, idade=? WHERE id=?', [pessoa.nome, pessoa.idade, pessoa.id]);
-    });
-    res.json({
-        "statusCode": 200
-    })
-}
+export async function updatePessoa(req, res) {
+     let pessoa = req.body;
+     let {id} = req.params;
+    openDb().then(db => { db.run('UPDATE Pessoa SET nome=?, idade=? WHERE id=?', [pessoa.nome, pessoa.idade, id]); });
+       res.json({ "statusCode": 200 }) }
+
 
 export async function deletePessoa(req, res){
-    let id = req.body.id;
-    openDb().then(db=>{
-        db.get('DELETE FROM Pessoa WHERE id=?', [id])
-        .then(res=>res)
+    const { id } = req.params;
+
+    const db = await openDb();
+
+    await db.run('DELETE FROM Pessoa WHERE id=?', [id]);
+
+    res.status(200).json({
+        message: "Pessoa deletada com sucesso"
     });
-    res.json({
-        "statusCode": 200
-    })
-}
+}   
