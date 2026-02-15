@@ -1,23 +1,20 @@
 import express from 'express';
-import fs from 'fs';
-import https from 'https';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
-import { createTable, createFavoritasTable } from './Controler/Pessoa.js';
-
-
-
+import { createTable } from './Controllers/PokemonController.js';
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.json());
 app.use(cors());
 
-import router from './routes.js'
+import router from './routes.js';
 app.use(router);
 
-app.listen( 3000, ()=>console.log("Api Rodando."))
-createFavoritasTable();
+createTable();
 
-https.createServer({
-    cert: fs.readFileSync('src/SSL/code.crt'),
-    key: fs.readFileSync('src/SSL/code.key')
-}, app).listen(3001, ()=> console.log("Rodando em https"));
+app.listen(3000, () => console.log("API rodando em http://localhost:3000"));

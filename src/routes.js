@@ -1,20 +1,39 @@
-import { Router } from "express";
-import { createTable, insertPessoa, updatePessoa, selectPessoas, selectPessoa, deletePessoa } from './Controler/Pessoa.js';
+import { Router } from 'express';
+
+import {
+    createTable,
+    selectPokemons,
+    selectPokemon,
+    insertPokemon,
+    updatePokemon,
+    deletePokemon
+} from './Controllers/PokemonController.js';
 
 const router = Router();
 
-router.get('/', (req, res)=>{
-    res.json({
-        "statusCode": 200,
-        "msg": "Api Rodando"
-    })
-})
+//////////////////////////////////////////////////
+// CREATE TABLE
+//////////////////////////////////////////////////
 
-router.get('/pessoas', selectPessoas);
-router.get('/pessoa', selectPessoa);
-router.post('/pessoa', insertPessoa);
-router.put('/pessoas/:id', updatePessoa);
+router.get('/create-table', createTable);
 
-router.delete('/pessoa/:id', deletePessoa);
+//////////////////////////////////////////////////
+// CRUD
+//////////////////////////////////////////////////
+
+// Listar todos ou buscar por nome
+router.get('/', selectPokemons);
+
+// Buscar por ID
+router.get('/:id', selectPokemon);
+
+// Inserir
+router.post('/', insertPokemon);
+
+// Atualizar
+router.put('/:id', updatePokemon);
+
+// Deletar
+router.delete('/:id', deletePokemon);
 
 export default router;
