@@ -20,3 +20,4 @@ Nós desenvolvemos uma API simples porém estruturada com rotas, controladore e 
 Espero que o projeto tenha ficado de fácil entendimento e caso tenham dúvidas, não exitem em entrar em contato, ficarei feliz em ajudar e ver o resultado dos projetos.
 
 Se precisarem entrar em contato, segue meu e-mail: yuri.erik.oliveora@gmail.com
+# projeto_pokemon
