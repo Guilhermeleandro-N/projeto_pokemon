@@ -2,15 +2,23 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  max-height: 100vh;
+  overflow-y: auto;
 }
+
+.bigger-container{
+    display: flex;
+}
+
 
 .pok-img{
     border-radius: 25px;
 }
 .pokedex-container{
      width: 225px;
-     background-color: #ff383f;
+     background-color: #342a28;
      height: 1000px;
+     max-height: 100vh;
      width: 255px;
      
 }
@@ -20,7 +28,7 @@ ul {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #ff383f;
+    background-color: #0A0000;
     padding: 15px; /* de 20px */
     gap: 15px;    /* de 20px */
     color: white;
@@ -31,13 +39,17 @@ ul {
 .pokemon-item {
     display: flex;
     align-items: center;
-    background-color: #ff383f;
+    background-color: #342a28;
     padding: 15px; /* de 20px */
     gap: 15px;    /* de 20px */
     color: white;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     width: 225px;  /* de 300px */
     list-style: none;
+}
+
+.pokemon-item:hover{
+    background-color: #0A0000;
 }
 
 /* Container da imagem circular */

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./SelecionarPokemon.css"
-
+import PokemonDestaque from "./PokemonDestaque";
 function SelecionarPokemon() {
 
     const [pokemons, setPokemons] = useState([]);
     const [busca, setBusca] = useState("");
+    const [destaque, setDestaque]= useState()
 
     async function carregarPokemons() {
 
@@ -24,12 +25,15 @@ function SelecionarPokemon() {
     }, [busca]);
 
     return (
+        <div  className="bigger-container">
+            
         <div className="pokedex-container"  >
+            
             <div className="header-container" >
             <h1>Pokédex</h1>
             
                 <div>
-                    <input
+                    <input className="inputClass"
                         type="text"
                         placeholder="Digite o nome do Pokémon"
                         value={busca}
@@ -43,7 +47,7 @@ function SelecionarPokemon() {
                             <li>Nenhum Pokémon encontrado</li>
                         ) : (
                             pokemons.map((pokemon) => (
-                                <li key={pokemon.id} className="pokemon-item">
+                                <li onClick={()=> setDestaque(pokemon)} key={pokemon.id} className="pokemon-item">
                                     <div className="image-container" >
                                         <img className="pok-img"
                                             src={pokemon.imagem}
@@ -64,8 +68,10 @@ function SelecionarPokemon() {
                         )
                     }
                 </ul>
-            
+                
         </div>
+        <PokemonDestaque trigger={destaque} ></PokemonDestaque>
+    </div>    
     );
 }
 

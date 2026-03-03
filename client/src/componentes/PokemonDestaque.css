@@ -1,0 +1,112 @@
+/* Container principal do card */
+.destaque-container {
+    list-style: none;
+    width: 750px;
+    max-width: 95%;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #c9a7e6, #a675d6);
+    border: 4px solid #2b1a3a;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Número da Pokédex */
+.pokedex-numberDes {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4b2c66;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Nome do Pokémon */
+.pokemon-infoDes  {
+    font-size: 40px;
+    margin: 0 0 15px 0;
+    color: #1d1030;
+}
+
+/* Container da imagem circular */
+/*
+.image-destaque {
+    width: 300px;
+    height: 300px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #2b1a3a;
+}*/
+
+.image-destaque{
+    background-color: white;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #333;
+}
+
+
+.pok-imgDes {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 60px;
+}
+
+
+/* Imagem do Pokémon */
+/*
+.pok-imgDes {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}*/
+
+/* Container dos tipos */
+.types-containerDes {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+/* Badge padrão */
+.type-badgeDes {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+
+/* Botão estilo "Adicionar ao time" (se quiser usar depois) */
+.add-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.add-button:hover {
+    opacity: 0.8;
+}
