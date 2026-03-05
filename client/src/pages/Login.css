@@ -1,0 +1,85 @@
+/* Container geral da página */
+.login-wrapper {
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: rgb(65, 0, 72);
+}
+
+/* Card do formulário */
+.login-container {
+    background-color: #342a28;
+    padding: 40px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 420px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Formulário */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs */
+.login-container input,
+.login-container select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    background-color: white;
+    color: #222;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder */
+.login-container input::placeholder {
+    color: #888;
+}
+
+/* Select personalizado */
+.login-container select {
+    cursor: pointer;
+}
+
+/* Botão */
+.login-container button {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #0A0000;
+    color: white;
+    transition: 0.3s ease;
+}
+
+/* Hover botão */
+.login-container button:hover {
+    background-color: #a675d6;
+}
+
+/* Mensagem */
+.login-container p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+}

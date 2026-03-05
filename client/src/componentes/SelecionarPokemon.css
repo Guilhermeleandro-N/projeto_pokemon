@@ -1,128 +1,123 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
-.bigger-container{
+.selecionar-wrapper {
     display: flex;
+    background-color: rgb(65, 0, 72);
 }
 
+/* UL agora não é mais global */
+.selecionar-wrapper ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+}
 
-.pok-img{
+.selecionar-wrapper .pok-img {
     border-radius: 25px;
 }
-.pokedex-container{
-     width: 225px;
-     background-color: #342a28;
-     height: 1000px;
-     max-height: 100vh;
-     width: 255px;
-     
+
+.selecionar-wrapper .pokedex-container {
+    width: 255px;
+    background-color: #342a28;
+    height: 1000px;
+    max-height: 100vh;
 }
 
-
-.header-container {
+.selecionar-wrapper .header-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #0A0000;
-    padding: 15px; /* de 20px */
-    gap: 15px;    /* de 20px */
+    padding: 15px;
+    gap: 15px;
     color: white;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    width: 225px;  /* de 300px */
+    width: 225px;
 }
 
-.pokemon-item {
+.selecionar-wrapper .pokemon-item {
     display: flex;
     align-items: center;
     background-color: #342a28;
-    padding: 15px; /* de 20px */
-    gap: 15px;    /* de 20px */
+    padding: 15px;
+    gap: 15px;
     color: white;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    width: 225px;  /* de 300px */
-    list-style: none;
+    width: 225px;
 }
 
-.pokemon-item:hover{
+.selecionar-wrapper .pokemon-item:hover {
     background-color: #0A0000;
 }
 
-/* Container da imagem circular */
-.image-container {
+.selecionar-wrapper .image-container {
     background-color: white;
     border-radius: 50%;
-    width: 60px;  /* de 80px */
-    height: 60px; /* de 80px */
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #333; /* de 3px */
+    border: 2px solid #333;
 }
 
-.image-container img {
-    width: 52px;  /* de 70px */
-    height: 52px; /* de 70px */
+.selecionar-wrapper .image-container img {
+    width: 52px;
+    height: 52px;
     object-fit: contain;
 }
 
-.pokemon-info {
+.selecionar-wrapper .pokemon-info {
     display: flex;
     flex-direction: column;
-    gap: 3px; /* de 4px */
+    gap: 3px;
 }
 
-.pokedex-number {
+.selecionar-wrapper .pokedex-number {
     font-weight: bold;
-    font-size: 0.9rem; /* de 1.2rem */
+    font-size: 0.9rem;
     opacity: 0.9;
 }
 
-.pokemon-info h2 {
+.selecionar-wrapper .pokemon-info h2 {
     margin: 0;
-    font-size: 1.35rem; /* de 1.8rem */
+    font-size: 1.35rem;
     font-weight: 500;
     text-transform: capitalize;
 }
 
-/* Estilo das "pills" de tipo */
-.types-container {
+.selecionar-wrapper .types-container {
     display: flex;
-    gap: 6px;    /* de 8px */
-    margin-top: 4px; /* de 5px */
+    gap: 6px;
+    margin-top: 4px;
 }
 
-.type-badge {
+.selecionar-wrapper .type-badge {
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 4px 11px; /* de 5px 15px */
-    border-radius: 15px; /* de 20px */
-    font-size: 0.67rem;   /* de 0.9rem */
+    padding: 4px 11px;
+    border-radius: 15px;
+    font-size: 0.67rem;
     backdrop-filter: blur(4px);
 }
 
-input[type="text"] {
+/* INPUT agora só afeta essa página */
+.selecionar-wrapper input[type="text"] {
     width: 100%;
-    max-width: 150px; /* de 200px */
-    padding: 9px 11px 9px 34px; /* Proporcional ao original */
-    border-radius: 7px; /* de 10px */
+    max-width: 150px;
+    padding: 9px 11px 9px 34px;
+    border-radius: 7px;
     border: none;
-    font-size: 0.82rem; /* de 1.1rem */
+    font-size: 0.82rem;
     outline: none;
-    
     background-image: url('https://www.svgrepo.com/show/532555/search.svg');
     background-repeat: no-repeat;
-    background-position: 11px center; /* de 15px */
-    background-size: 15px;             /* de 20px */
+    background-position: 11px center;
+    background-size: 15px;
     background-color: white;
-    
     box-shadow: inset 0 1.5px 4px rgba(0, 0, 0, 0.2);
 }
 
-input[type="text"]::placeholder {
+.selecionar-wrapper input[type="text"]::placeholder {
     color: #888;
     font-weight: 400;
 }

@@ -25,7 +25,7 @@ function SelecionarPokemon() {
     }, [busca]);
 
     return (
-        <div  className="bigger-container">
+        <div  className="selecionar-wrapper">
             
         <div className="pokedex-container"  >
             

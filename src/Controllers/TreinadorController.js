@@ -1,14 +1,19 @@
 import { openDb } from '../configDB.js';
 
 export async function registrarTreinador(req, res) {
-    const { nome, senha, sexo, pokemon_favorito_id, regiao } = req.body;
+    const { nome, senha, sexo, pokemon_favorito, regiao } = req.body;
     const db = await openDb();
+
     try {
         await db.run(
-            `INSERT INTO Treinadores (nome, senha, sexo, pokemon_favorito_id, regiao) VALUES (?,?,?,?,?)`,
-            [nome, senha, sexo, pokemon_favorito_id, regiao]
+            `INSERT INTO Treinadores 
+            (nome, senha, sexo, pokemon_favorito, regiao) 
+            VALUES (?,?,?,?,?)`,
+            [nome, senha, sexo, pokemon_favorito, regiao]
         );
+
         res.status(201).json({ message: "Treinador cadastrado!" });
+
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -38,11 +43,15 @@ export async function getTreinador(req, res) {
 
 export async function atualizarTreinador(req, res) {
     const { id } = req.params;
-    const { nome, sexo, regiao, pokemon_favorito_id } = req.body;
+    const { nome, sexo, regiao, pokemon_favorito } = req.body;
     const db = await openDb();
+
     await db.run(
-        `UPDATE Treinadores SET nome=?, sexo=?, regiao=?, pokemon_favorito_id=? WHERE id=?`,
-        [nome, sexo, regiao, pokemon_favorito_id, id]
+        `UPDATE Treinadores 
+         SET nome=?, sexo=?, regiao=?, pokemon_favorito=? 
+         WHERE id=?`,
+        [nome, sexo, regiao, pokemon_favorito, id]
     );
+
     res.json({ message: "Atualizado!" });
 }

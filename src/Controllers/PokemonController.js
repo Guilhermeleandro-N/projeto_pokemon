@@ -16,6 +16,14 @@ export async function createTable() {
             peso REAL NOT NULL,
             tipo TEXT NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS Treinadores (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        senha TEXT NOT NULL,
+        sexo TEXT NOT NULL,
+        pokemon_favorito TEXT NOT NULL,
+        regiao TEXT NOT NULL
+);
     `);
 }
 
