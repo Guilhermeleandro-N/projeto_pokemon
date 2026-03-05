@@ -23,8 +23,8 @@ npm -v
 
 # 2. Clonar o projeto
 ```
-git clone <url-do-repositorio>
-cd <nome-do-projeto>
+git clone https://github.com/Guilhermeleandro-N/projeto_pokemon.git
+cd projeto_pokemon
 3. Rodando o Back-end
 ```
 Entre na pasta server:
