@@ -46,7 +46,7 @@ http://localhost:3000
 O banco de dados SQLite será criado automaticamente no arquivo:
 
 database.db
-# 4. Rodando o Front-end
+# 3. Rodando o Front-end
 
 Abra outro terminal e entre na pasta front:
 ```bash
@@ -55,6 +55,10 @@ cd front
 Instale as dependências:
 ```bash
 npm install
+```
+Se ocorrer algum erro:
+```bash
+npm audit fix
 ```
 Inicie a aplicação React:
 ```bash

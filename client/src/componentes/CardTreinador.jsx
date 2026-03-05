@@ -18,8 +18,8 @@ function CardTreinador() {
         return <p>Nenhum treinador logado</p>;
     }
 
-    const imagem = treinador.sexo === "Masculino" ? Masculino : Feminino;
-
+    const imagem = treinador.sexo === "menino" ? Masculino : Feminino;
+    const sexo = treinador.sexo == "menino" ? "Masculino" : "Feminino"
     return (
         <div className="trainer-card">
 
@@ -31,7 +31,7 @@ function CardTreinador() {
 
             <h2>{treinador.nome}</h2>
 
-            <p><strong>Sexo:</strong> {treinador.sexo}</p>
+            <p><strong>Sexo:</strong> {sexo}</p>
 
             <p><strong>Região:</strong> {treinador.regiao}</p>
 
