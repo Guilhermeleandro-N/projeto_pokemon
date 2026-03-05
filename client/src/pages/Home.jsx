@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react";
-import "./SelecionarPokemon.css"
-import PokemonDestaque from "./PokemonDestaque";
-import CardTreinador from "./CardTreinador";
-import LogoutButton from "./LogoutButton";
+import { useNavigate } from "react-router-dom";
+import "./Home.css"
+import PokemonDestaque from "../componentes/PokemonDestaque";
+import CardTreinador from "../componentes/CardTreinador";
+import LogoutButton from "../componentes/LogoutButton";
 function SelecionarPokemon() {
+    const navigate = useNavigate()
+
+    useEffect(() => {
+    const trainer = localStorage.getItem("treinador");
+
+    if (!trainer) {
+      navigate("/login");
+    }
+  }, []);
+
+
 
     const [pokemons, setPokemons] = useState([]);
     const [busca, setBusca] = useState("");

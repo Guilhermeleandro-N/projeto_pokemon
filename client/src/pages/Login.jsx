@@ -21,7 +21,7 @@ function Login(){
 
             if (response.ok){
                 localStorage.setItem("treinador", JSON.stringify(data));
-                navigate("/selecionar-pokemon");
+                navigate("/");
             }else{
                 setMessage(data.message || "Nome ou senha inválidos.");
             }
