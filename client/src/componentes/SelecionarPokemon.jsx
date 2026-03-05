@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./SelecionarPokemon.css"
 import PokemonDestaque from "./PokemonDestaque";
+import CardTreinador from "./CardTreinador";
+import LogoutButton from "./LogoutButton";
 function SelecionarPokemon() {
 
     const [pokemons, setPokemons] = useState([]);
@@ -71,6 +73,11 @@ function SelecionarPokemon() {
                 
         </div>
         <PokemonDestaque trigger={destaque} ></PokemonDestaque>
+        <div className="card-btn">
+            <CardTreinador/>
+            <LogoutButton/>
+        </div>
+        
     </div>    
     );
 }

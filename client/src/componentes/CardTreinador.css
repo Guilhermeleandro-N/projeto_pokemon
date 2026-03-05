@@ -1,0 +1,22 @@
+.trainer-card{
+    background-color: #342a28;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.trainer-img{
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.trainer-card h2{
+    margin-bottom: 10px;
+}
+
+.trainer-card p{
+    margin: 4px 0;
+}
