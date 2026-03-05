@@ -87,3 +87,8 @@
 .link-register:hover{
   cursor: pointer;
 }
+
+
+.form-error{
+    color: red;
+}

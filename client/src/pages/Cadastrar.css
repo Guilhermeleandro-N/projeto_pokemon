@@ -87,3 +87,7 @@
 .link-login:hover{
   cursor: pointer;
 }
+
+.form-error{
+    color: red;
+}

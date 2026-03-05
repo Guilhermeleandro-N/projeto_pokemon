@@ -97,11 +97,12 @@ const Cadastrar = () => {
                 onChange={handleChange}
                 required
                 />
+                {message && <p className='form-error' >{message}</p>}
                 <button type="submit">Cadastrar</button>
             </form>
             <a className='link-login' onClick={()=>{navigate("/login")}} >Já possui uma conta? Faça login</a>
             </div>
-            {message && <p>{message}</p>}
+            
         </div>
   )
 }

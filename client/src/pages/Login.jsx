@@ -48,13 +48,14 @@ function Login(){
                     onChange={(e)=>setSenha(e.target.value)}
                     required
                     />
+                    {message && <p className="form-error" >{message}</p>}
                     <button type="submit">Entrar</button>
                     
                 </form>
                 <a className="link-register" onClick={()=>{navigate("/cadastrar")}} >Não possui uma conta? Registre-se</a>
             </div>
             
-            {message && <p>{message}</p>}
+            
         </div>
     );
 }
