@@ -15,8 +15,6 @@ function SelecionarPokemon() {
         }
     }, []);
 
-
-
     const [pokemons, setPokemons] = useState([]);
     const [busca, setBusca] = useState("");
     const [destaque, setDestaque] = useState()
@@ -58,7 +56,7 @@ function SelecionarPokemon() {
                 <ul>
                     {
                         pokemons.length === 0 ? (
-                            <li>Nenhum Pokémon encontrado</li>
+                            <li className="select-error"  >Nenhum Pokémon encontrado</li>
                         ) : (
                             pokemons.map((pokemon) => (
                                 <li onClick={() => setDestaque(pokemon)} key={pokemon.id} className="pokemon-item">
