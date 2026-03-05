@@ -25,8 +25,8 @@ npm -v
 ```
 git clone https://github.com/Guilhermeleandro-N/projeto_pokemon.git
 cd projeto_pokemon
-3. Rodando o Back-end
 ```
+# 3. Rodando o Back-end
 Entre na pasta server:
 ```bash
 cd server
@@ -37,7 +37,7 @@ npm install
 ```
 Inicie o servidor:
 ```bash
-npm start
+npm run dev
 ```
 A API será iniciada em:
 
@@ -46,7 +46,7 @@ http://localhost:3000
 O banco de dados SQLite será criado automaticamente no arquivo:
 
 database.db
-# 3. Rodando o Front-end
+# 4. Rodando o Front-end
 
 Abra outro terminal e entre na pasta front:
 ```bash
@@ -55,10 +55,6 @@ cd front
 Instale as dependências:
 ```bash
 npm install
-```
-Se ocorrer algum erro:
-```bash
-npm audit fix
 ```
 Inicie a aplicação React:
 ```bash
