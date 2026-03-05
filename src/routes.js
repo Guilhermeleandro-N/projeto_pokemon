@@ -36,4 +36,34 @@ router.put('/:id', updatePokemon);
 // Deletar
 router.delete('/:id', deletePokemon);
 
+import {
+    registrarTreinador,
+    loginTreinador,
+    getTreinador,
+    atualizarTreinador
+} from './Controllers/TreinadorController.js';
+
+import {
+    listarTime,
+    adicionarAoTime,
+    removerDoTime
+} from './Controllers/TimeController.js';
+
+
+/**
+ * ROTAS DE TREINADOR (Autenticação e Perfil)
+ */
+router.post('/treinador/registro', registrarTreinador);
+router.post('/treinador/login', loginTreinador); // Para o React validar a entrada
+router.get('/treinador/:id', getTreinador);     // Retorna perfil + time completo
+router.put('/treinador/:id', atualizarTreinador);
+
+/**
+ * ROTAS DE TIME (Gestão da Equipe)
+ */
+router.get('/time/:treinador_id', listarTime);
+router.post('/time', adicionarAoTime);         // Passa treinador_id e pokemon_id no body
+router.delete('/time', removerDoTime);         // Passa os IDs para remover a relação
+
+
 export default router;
