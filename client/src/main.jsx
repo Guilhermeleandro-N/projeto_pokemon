@@ -11,7 +11,6 @@ createRoot(document.getElementById('root')).render(
   <Routes>
     <Route path='/' element={<SelecionarPokemon/>}></Route>
     <Route path='/cadastrar' element={<Cadastrar />}></Route>
-    <Route path='/selecionar-pokemon' element={<SelecionarPokemon/>} ></Route>
     <Route path='/login' element={<Login/>} ></Route>
   </Routes>
   </BrowserRouter>

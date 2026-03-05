@@ -72,7 +72,7 @@ function SelecionarPokemon() {
                                         <h2>{pokemon.nome}</h2>
                                         <div className="types-container">
                                             <span className="type-badge">{pokemon.tipo}</span>
-                                            {/* Se você tiver uma lista de tipos, pode fazer um .map aqui */}
+                                            
                                         </div>
                                     </div>
                                 </li>
