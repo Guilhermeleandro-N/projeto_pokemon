@@ -17,7 +17,7 @@ function PokemonDestaque({ trigger }) {
         }else {
             setPokemon(trigger)
         }
-    }, [])
+    }, [carregarPokemon])
 
     return (pokemon) ? (
 
