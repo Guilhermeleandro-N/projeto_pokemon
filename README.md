@@ -35,6 +35,11 @@ Instale as dependências:
 ```bash
 npm install
 ```
+
+Se der erro após o npm install:
+```bash
+npm audit fix
+```
 Inicie o servidor:
 ```bash
 npm run dev
@@ -56,6 +61,11 @@ Instale as dependências:
 ```bash
 npm install
 ```
+Se der erro após o npm install:
+```bash
+npm audit fix
+```
+
 Inicie a aplicação React:
 ```bash
 npm run dev
