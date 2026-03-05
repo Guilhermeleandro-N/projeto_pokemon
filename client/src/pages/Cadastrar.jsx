@@ -99,6 +99,7 @@ const Cadastrar = () => {
                 />
                 <button type="submit">Cadastrar</button>
             </form>
+            <a className='link-login' onClick={()=>{navigate("/login")}} >Já possui uma conta? Faça login</a>
             </div>
             {message && <p>{message}</p>}
         </div>

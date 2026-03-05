@@ -1,7 +1,7 @@
 /* Container geral da página */
 .register-wrapper {
     min-height: 100vh;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(65, 0, 72);   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,4 +81,9 @@
     margin-top: 15px;
     text-align: center;
     font-size: 0.9rem;
+}
+
+
+.link-login:hover{
+  cursor: pointer;
 }

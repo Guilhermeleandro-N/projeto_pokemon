@@ -1,27 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./PokemonDestaque.css"
 function PokemonDestaque({ trigger }) {
-    return (trigger) ? (
+
+    const [pokemon, setPokemon] = useState(null)
+
+    async function carregarPokemon() {
+        const response = await fetch("http://localhost:3000/4");
+        const data = await response.json();
+        setPokemon(data);
+    }
+
+    useEffect(() => {
+        if (!trigger){
+            carregarPokemon()
+            trigger = pokemon;
+        }else {
+            setPokemon(trigger)
+        }
+    }, [carregarPokemon])
+
+    return (pokemon) ? (
 
         <div className="destaque-container">
             <div className="image-destaque" >
                 <img className="pok-imgDes"
-                    src={trigger.imagem}
-                    alt={trigger.nome}
+                    src={pokemon.imagem}
+                    alt={pokemon.nome}
 
                 />
             </div>
             <div className="pokemon-infoDes">
-                <span className="pokedex-number">#{trigger.numero_pokedex}</span>
-                <h2>{trigger.nome}</h2>
+                <span className="pokedex-number">#{pokemon.numero_pokedex}</span>
+                <h2>{pokemon.nome}</h2>
                 <div className="types-containerDes">
-                    <span className="type-badge">{trigger.tipo}</span>
-                    {/* Se você tiver uma lista de tipos, pode fazer um .map aqui */}
+                    <span className="type-badge">{pokemon.tipo}</span>
                 </div>
             </div>
         </div>
-
-
 
     ) : "";
 }

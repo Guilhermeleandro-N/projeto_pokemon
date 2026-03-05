@@ -8,24 +8,24 @@ function SelecionarPokemon() {
     const navigate = useNavigate()
 
     useEffect(() => {
-    const trainer = localStorage.getItem("treinador");
+        const trainer = localStorage.getItem("treinador");
 
-    if (!trainer) {
-      navigate("/login");
-    }
-  }, []);
+        if (!trainer) {
+            navigate("/login");
+        }
+    }, []);
 
 
 
     const [pokemons, setPokemons] = useState([]);
     const [busca, setBusca] = useState("");
-    const [destaque, setDestaque]= useState()
+    const [destaque, setDestaque] = useState()
 
     async function carregarPokemons() {
 
         let url = "http://localhost:3000/";
 
-        if (busca) {
+        if (busca) {    
             url += `?nome=${busca}`;
         }
 
@@ -39,29 +39,29 @@ function SelecionarPokemon() {
     }, [busca]);
 
     return (
-        <div  className="selecionar-wrapper">
-            
-        <div className="pokedex-container"  >
-            
-            <div className="header-container" >
-            <h1>Pokédex</h1>
-            
-                <div>
-                    <input className="inputClass"
-                        type="text"
-                        placeholder="Digite o nome do Pokémon"
-                        value={busca}
-                        onChange={(e) => setBusca(e.target.value)}
-                    />
+        <div className="selecionar-wrapper">
+
+            <div className="pokedex-container"  >
+
+                <div className="header-container" >
+                    <h1>Pokédex</h1>
+
+                    <div>
+                        <input className="inputClass"
+                            type="text"
+                            placeholder="Digite o nome do Pokémon"
+                            value={busca}
+                            onChange={(e) => setBusca(e.target.value)}
+                        />
+                    </div>
                 </div>
-            </div>
                 <ul>
                     {
                         pokemons.length === 0 ? (
                             <li>Nenhum Pokémon encontrado</li>
                         ) : (
                             pokemons.map((pokemon) => (
-                                <li onClick={()=> setDestaque(pokemon)} key={pokemon.id} className="pokemon-item">
+                                <li onClick={() => setDestaque(pokemon)} key={pokemon.id} className="pokemon-item">
                                     <div className="image-container" >
                                         <img className="pok-img"
                                             src={pokemon.imagem}
@@ -82,15 +82,15 @@ function SelecionarPokemon() {
                         )
                     }
                 </ul>
-                
+
+            </div>
+            <PokemonDestaque trigger={destaque} ></PokemonDestaque>
+            <div className="card-btn">
+                <CardTreinador />
+                <LogoutButton />
+            </div>
+
         </div>
-        <PokemonDestaque trigger={destaque} ></PokemonDestaque>
-        <div className="card-btn">
-            <CardTreinador/>
-            <LogoutButton/>
-        </div>
-        
-    </div>    
     );
 }
 

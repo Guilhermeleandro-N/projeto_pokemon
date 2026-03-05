@@ -83,3 +83,7 @@
     text-align: center;
     font-size: 0.9rem;
 }
+
+.link-register:hover{
+  cursor: pointer;
+}

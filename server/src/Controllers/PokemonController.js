@@ -24,6 +24,14 @@ export async function createTable() {
         pokemon_favorito TEXT NOT NULL,
         regiao TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS Times (
+        treinador_id INTEGER,
+        pokemon_id INTEGER,
+        PRIMARY KEY (treinador_id, pokemon_id),
+        FOREIGN KEY (treinador_id) REFERENCES Treinadores(id) ON DELETE CASCADE,
+        FOREIGN KEY (pokemon_id) REFERENCES Pokemon(id) ON DELETE CASCADE
+    );
     `);
 }
 
